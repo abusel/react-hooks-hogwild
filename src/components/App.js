@@ -15,7 +15,8 @@ function App() {
 			<Nav />
 			<HogSorter setSortBy={setSortBy} setDisplayedHogs={setDisplayedHogs} displayedHogs = {displayedHogs}/>
 			<Filter filterGreased={filterGreased} setFilterGreased={setFilterGreased}/>
-			<HogContainer hogs={hogs} filterGreased={filterGreased} sortBy={sortBy} displayedHogs={displayedHogs}/>
+			<HogContainer hogs={hogs} filterGreased={filterGreased} sortBy={sortBy} displayedHogs={displayedHogs} setDisplayedHogs=
+			{setDisplayedHogs}/>
 		</div>
 	);
 }

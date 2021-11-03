@@ -1,6 +1,12 @@
 import React from 'react'
 
-function HogTile({hog, setSelectedHog}){
+function HogTile({hog, setSelectedHog, setDisplayedHogs, displayedHogs}){
+    function handleHide(hogHidden){
+        let newHogs = displayedHogs.filter((hog)=>{
+            return hog.name !== hogHidden.name
+        })
+        setDisplayedHogs(newHogs)
+    }
     return (
         <div className='ui card' style={{marginTop:'3%'}}>
            <div className= 'ui image'>
@@ -10,6 +16,9 @@ function HogTile({hog, setSelectedHog}){
                 setSelectedHog(hog)
             }}>
                 <h4 >{hog.name}</h4>
+                <button onClick= {()=>{
+                    handleHide(hog)
+                }}>Hide</button>
             </div>
             
         </div>

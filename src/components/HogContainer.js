@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import HogTile from './HogTile'
 
-function HogContainer({hogs, filterGreased, sortBy, displayedHogs}) {
+function HogContainer({hogs, filterGreased, sortBy, displayedHogs, setDisplayedHogs}) {
     const [selectedHog, setSelectedHog] = useState(hogs[0])
     console.log(displayedHogs)
     return (
@@ -10,11 +10,11 @@ function HogContainer({hogs, filterGreased, sortBy, displayedHogs}) {
             {displayedHogs.map((hog)=>{
                 if (filterGreased){
                     if (hog.greased){
-                        return <HogTile hog= {hog} setSelectedHog={setSelectedHog}/>
+                        return <HogTile hog= {hog} setSelectedHog={setSelectedHog} setDisplayedHogs={setDisplayedHogs} displayedHogs={displayedHogs}/>
                     }
                 }
                 else{
-                    return <HogTile hog= {hog} setSelectedHog={setSelectedHog}/>
+                    return <HogTile hog= {hog} setSelectedHog={setSelectedHog} setDisplayedHogs={setDisplayedHogs} displayedHogs={displayedHogs}/>
                 }
             })}
         </div>
